@@ -66,5 +66,10 @@ def services():
     services_info = get_services_info()
     return jsonify(services_info)
 
+@app.route('/prueba', methods=['POST'])
+def prueba():
+    user_input = request.json.get('message')
+    return jsonify({'message': 'Prueba exitosa. Este es tu mensaje: ' + user_input})
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
