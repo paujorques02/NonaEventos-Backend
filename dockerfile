@@ -17,5 +17,5 @@ COPY . .
 EXPOSE 8000
 
 # El comando para iniciar la aplicación cuando el contenedor arranque
-# Le dice a uvicorn que ejecute la instancia "app" de FastAPI que está en api/chatbot.py
-CMD ["uvicorn", "api.chatbot:app", "--host", "0.0.0.0", "--port", "8000"]
+# Le dice a uvicorn que use el puerto definido en la variable de entorno PORT, o 8000 si no existe.
+CMD uvicorn api.main:app --host 0.0.0.0 --port ${PORT:-8000}

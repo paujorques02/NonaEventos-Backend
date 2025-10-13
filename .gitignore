@@ -45,3 +45,7 @@ Thumbs.db
 .idea/
 .vscode/
 .idx/
+
+# Deployment files with secrets
+env.yaml
+run-docker.sh
